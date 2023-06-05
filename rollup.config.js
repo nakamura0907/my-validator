@@ -36,6 +36,12 @@ export default [
   {
     input: "dist/esm/types/index.d.ts",
     output: [{ file: packageJson.types, format: "esm" }],
-    plugins: [dts()],
+    plugins: [
+      dts(),
+      del({
+        hook: "buildEnd",
+        targets: ["dist/cjs/types/", "dist/esm/types/"],
+      }),
+    ],
   },
 ];
