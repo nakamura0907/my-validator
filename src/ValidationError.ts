@@ -7,3 +7,7 @@ export class ValidationError extends Error {
     Object.setPrototypeOf(this, new.target.prototype);
   }
 }
+
+export const isValidationError = (error: any): error is ValidationError => {
+  return error instanceof ValidationError;
+};
