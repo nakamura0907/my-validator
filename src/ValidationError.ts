@@ -24,7 +24,7 @@ export class ValidationError<T = any> extends Error {
 }
 
 export const isValidationError = <T>(
-  error: any,
+  error: unknown,
 ): error is ValidationError<T> => {
   return error instanceof ValidationError;
 };

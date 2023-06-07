@@ -17,10 +17,12 @@ describe("ValidationError", () => {
 
 describe("isValidationError", () => {
   it("ValidationErrorクラスか判定ができる", () => {
+    const invalidNull = null;
     const invalidValue = 1;
     const invalidObject = {};
     const invalidError = new Error("message");
 
+    expect(isValidationError(invalidNull)).toBeFalsy();
     expect(isValidationError(invalidValue)).toBeFalsy();
     expect(isValidationError(invalidObject)).toBeFalsy();
     expect(isValidationError(invalidError)).toBeFalsy();
