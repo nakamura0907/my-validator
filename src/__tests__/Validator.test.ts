@@ -27,7 +27,7 @@ describe("Schemaクラス", () => {
   });
 
   it("Resultクラスを返す", () => {
-    expect(schema.validate(validValue)).toBeInstanceOf(Result);
-    expect(schema.validate(invalidValue)).toBeInstanceOf(Result);
+    expect(schema.validateWithResult(validValue)).toBeInstanceOf(Result);
+    expect(schema.validateWithResult(invalidValue)).toBeInstanceOf(Result);
   });
 })
